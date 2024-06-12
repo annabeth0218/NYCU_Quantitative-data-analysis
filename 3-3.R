@@ -52,8 +52,9 @@ library(tidyquant)
 library(tidyverse)
 library(highcharter)
 
+x <- getSymbols("2330.TW", auto.assign = FALSE)
 highchart(type = "stock") |> 
-  hc_add_series(stock_2330)
+  hc_add_series(x)
 
 stock_2330 <- tq_get("2330.TW", from = "2009-01-01", to = "2024-06-12") |>
   mutate(year = year(date), week = week(date)) |> 
@@ -68,4 +69,3 @@ stock_2330 <- tq_get("2330.TW", from = "2009-01-01", to = "2024-06-12") |>
 svi_2330 <- svi_2330 |> 
   mutate(year = year(date), week = week(date))
 trends_2330 <- merge(stock_2330, svi_2330, by = c("year", "week"))
-
