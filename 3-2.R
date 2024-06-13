@@ -47,7 +47,7 @@ sink(file = "TSMC_demo.txt")
 tail(svi_2330)
 sink()
 
-# 3-3
+# 3-2
 library(tidyquant)
 library(tidyverse)
 library(highcharter)
