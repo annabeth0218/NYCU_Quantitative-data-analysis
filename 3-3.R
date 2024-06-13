@@ -7,7 +7,7 @@ library(tidyverse)
 trends_weekly <- function(keyword, geo) {
   unadjusted <- data.frame()
   # every 5 years
-  for (yr in c(2009,2019)) {
+  for (yr in c(2004,2020)) {
     start <- ymd(paste(yr, "01", "01", sep = "-"))
     end <- ymd(paste(yr+4, "12-31", sep = "-"))
     span <- paste(start, end, sep = " ")
